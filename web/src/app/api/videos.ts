@@ -86,4 +86,29 @@ export async function getRandomTopics(count: number = 5, type: string = 'tech-tr
         console.error('Error fetching random topics:', error);
         throw error;
     }
+}
+
+export async function getPersonalityTitles(count: number = 5): Promise<TitleDescription[]> {
+    try {
+        console.log('Fetching personality titles:', { count });
+        
+        const response = await fetch(`${API_URL}/api/topics/personalities?count=${count}`);
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Failed to fetch personality titles');
+        }
+
+        const data = await response.json();
+        console.log('Received personality titles:', data);
+
+        if (!data || !Array.isArray(data) || data.length === 0) {
+            throw new Error('Invalid response format or empty response');
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Error fetching personality titles:', error);
+        throw error;
+    }
 } 
