@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { generateArticle, getArticles, deleteArticle, getRandomTopics } from "./api/videos";
+import { generateArticle, getArticles, deleteArticle, getRandomTopics, TitleDescription } from "./api/videos";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ReactNode } from 'react';
@@ -73,7 +73,7 @@ export default function Home() {
         const topics = await getRandomTopics(10, type);
 
         // Başlıkları formatla
-        const formattedTopics = topics.map((topic: TopicResponse) => 
+        const formattedTopics = topics.map((topic: TitleDescription) => 
             topic.title
         ).filter((title: string) => !existingTitles.includes(title.toLowerCase()));
 

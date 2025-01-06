@@ -7,8 +7,9 @@ interface Article {
     createdAt: string;
 }
 
-interface TitleDescription {
+export interface TitleDescription {
     title: string;
+    type: string;
     keywords: string[];
     summary: string;
     readingTime: string;
