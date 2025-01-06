@@ -1,113 +1,113 @@
-# AI Makale Üretici
+# AI Article Generator
 
-Modern web teknolojileri ve Google'ın Gemini AI modelini kullanarak, teknoloji dünyasındaki en son gelişmeler hakkında özgün ve profesyonel makaleler üreten bir web uygulaması.
+A web application that produces original and professional articles about the latest developments in the technology world using modern web technologies and Google's Gemini AI model.
 
-## 🎯 Proje Amacı
+## 🎯 Project Purpose
 
-- Güncel teknoloji gelişmeleri hakkında özgün makaleler üretme
-- Spesifik ve ölçülebilir veriler içeren başlıklar oluşturma
-- Teknoloji liderleri ve yatırım trendleri hakkında içerik sağlama
-- Profesyonel gelişim için kaynak oluşturma
+- Generate original articles about current technology developments
+- Create titles containing specific and measurable data
+- Provide content on technology leaders and investment trends
+- Create resources for professional development
 
-## 🚀 Özellikler
+## 🚀 Features
 
-### Başlık Üretimi
-- **AI Destekli Başlıklar**
-  - Güncel teknoloji gelişmelerine odaklı
-  - Spesifik ürün ve güncellemeler
-  - Ölçülebilir veriler ve etkiler
-  - Kategori bazlı özelleştirme
+### Title Generation
+- **AI-Powered Titles**
+  - Focused on current technology developments
+  - Specific products and updates
+  - Measurable data and impacts
+  - Category-based customization
 
-### İçerik Kategorileri
-- **Teknoloji Trendleri**
-  - AI ve ML güncellemeleri
-  - Donanım ve çip teknolojileri
-  - Sürdürülebilir teknoloji
-  - Uzay ve sağlık teknolojileri
+### Content Categories
+- **Technology Trends**
+  - AI and ML updates
+  - Hardware and chip technologies
+  - Sustainable technology
+  - Space and health technologies
 
-- **Teknoloji Liderleri**
-  - Lider profilleri ve stratejileri
-  - Şirket kararları ve yatırımlar
-  - Vizyon ve gelecek planları
-  - Teknoloji trendlerine yaklaşımlar
+- **Technology Leaders**
+  - Leader profiles and strategies
+  - Company decisions and investments
+  - Vision and future plans
+  - Approaches to technology trends
 
-- **Yatırım İçgörüleri**
-  - Teknoloji şirketleri analizleri
-  - Pazar projeksiyonları
-  - Finansal metrikler
-  - Risk ve fırsat değerlendirmeleri
+- **Investment Insights**
+  - Analysis of technology companies
+  - Market projections
+  - Financial metrics
+  - Risk and opportunity assessments
 
-- **Kişisel Gelişim**
-  - Dijital beceriler
-  - Kariyer stratejileri
-  - Sertifikasyon yol haritaları
-  - Verimlilik teknikleri
+- **Personal Development**
+  - Digital skills
+  - Career strategies
+  - Certification roadmaps
+  - Productivity techniques
 
-### Kullanıcı Arayüzü
-- Modern ve responsive tasarım
-- Karanlık/Aydınlık mod desteği
-- Markdown formatında içerik
-- Kategori bazlı filtreleme
-- Arama fonksiyonu
+### User Interface
+- Modern and responsive design
+- Dark/Light mode support
+- Content in Markdown format
+- Category-based filtering
+- Search function
 
-## 🛠 Teknoloji Stack
+## 🛠 Technology Stack
 
 ### Backend
 - Node.js & Express.js
 - Google Gemini AI API
-- Rate limiting ve güvenlik
-- Markdown desteği
+- Rate limiting and security
+- Markdown support
 
 ### Frontend
 - Next.js 13+
 - React & TypeScript
 - Tailwind CSS
 - React Markdown
-- Tema desteği
+- Theme support
 
-## 💻 Kurulum
+## 💻 Installation
 
-1. Repoyu klonlayın:
+1. Clone the repository:
 ```bash
 git clone [repo-url]
 cd video-app
 ```
 
-2. Backend kurulumu:
+2. Backend setup:
 ```bash
 cd backend
 npm install
 ```
 
-3. Frontend kurulumu:
+3. Frontend setup:
 ```bash
 cd web
 npm install
 ```
 
-4. Backend için .env dosyası oluşturun:
+4. Create a .env file for the backend:
 ```env
 PORT=3001
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-## 🚀 Çalıştırma
+## 🚀 Running
 
-1. Backend'i başlatın:
+1. Start the backend:
 ```bash
 cd backend
 npm run dev
 ```
 
-2. Frontend'i başlatın:
+2. Start the frontend:
 ```bash
 cd web
 npm run dev
 ```
 
-Uygulama http://localhost:3000 adresinde çalışacaktır.
+The application will run at http://localhost:3000.
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 video-app/
@@ -127,37 +127,37 @@ video-app/
 └── README.md
 ```
 
-## 🔧 Yapılandırma
+## 🔧 Configuration
 
-### Backend Yapılandırması
-- `PORT`: API sunucusunun çalışacağı port (varsayılan: 3001)
-- `GEMINI_API_KEY`: Google Gemini AI API erişim anahtarı
+### Backend Configuration
+- `PORT`: The port on which the API server will run (default: 3001)
+- `GEMINI_API_KEY`: Google Gemini AI API access key
 
 ### Rate Limiting
-- Makale üretimi: Dakikada 1 istek
-- Başlık üretimi: Dakikada 5 istek
-- Genel istekler: Dakikada 30 istek
+- Article generation: 1 request per minute
+- Title generation: 5 requests per minute
+- General requests: 30 requests per minute
 
-### İçerik Limitleri
-- Makale uzunluğu: 800-2000 kelime
-- Başlık uzunluğu: 3-8 kelime
-- Minimum bekleme süresi: 30 saniye
-- Maksimum bekleme süresi: 120 saniye
+### Content Limits
+- Article length: 800-2000 words
+- Title length: 3-8 words
+- Minimum wait time: 30 seconds
+- Maximum wait time: 120 seconds
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-1. Fork'layın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit'leyin (`git commit -m 'feat: Add amazing feature'`)
-4. Push'layın (`git push origin feature/amazing-feature`)
-5. Pull Request açın
+1. Fork it
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📝 Lisans
+## 📝 License
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🔗 Faydalı Linkler
+## 🔗 Useful Links
 
-- [Google Gemini AI Dokümantasyonu](https://ai.google.dev/docs)
-- [Next.js Dokümantasyonu](https://nextjs.org/docs)
-- [React Markdown Dokümantasyonu](https://remarkjs.github.io/react-markdown/) 
+- [Google Gemini AI Documentation](https://ai.google.dev/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Markdown Documentation](https://remarkjs.github.io/react-markdown/) 
