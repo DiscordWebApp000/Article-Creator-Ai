@@ -48,6 +48,17 @@ function validateApiKey(apiKey) {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// CORS configuration
+app.use(cors({
+    origin: ['https://article-creator-aii.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
+// Parse JSON bodies
+app.use(express.json());
+
 // Rate limiter configurations
 const generateLimiter = rateLimit({
     windowMs: 60 * 1000, // 1 minute
@@ -96,15 +107,6 @@ function decreaseWaitTime() {
     MIN_REQUEST_INTERVAL = Math.max(30000, MIN_REQUEST_INTERVAL - 5000);
     console.log(`Wait time decreased to ${MIN_REQUEST_INTERVAL/1000} seconds`);
 }
-
-// CORS and other middleware
-app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    methods: ['GET', 'POST', 'DELETE'],
-    credentials: true
-}));
-app.use(express.json());
-app.use(generalLimiter); // General rate limiter
 
 // Create folder for articles
 const articlesDir = path.join(__dirname, 'articles');
