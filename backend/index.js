@@ -48,13 +48,27 @@ function validateApiKey(apiKey) {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// CORS configuration
+// CORS configuration - Updated
 app.use(cors({
-    origin: ['https://article-creator-aii.vercel.app', 'http://localhost:3000'],
+    origin: '*', // Tüm originlere izin ver
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+    credentials: false // credentials'ı false yapıyoruz
 }));
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(500).json({
+        error: 'Internal Server Error',
+        message: err.message
+    });
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok' });
+});
 
 // Parse JSON bodies
 app.use(express.json());
